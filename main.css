@@ -1,0 +1,148 @@
+/* main.css */
+
+/* General Styles */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+h2, h1 {
+    color: #003366;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.header-nav a:hover {
+    color: #cccccc;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #cccccc;
+}
+
+/* Button Styles */
+.vote-button, .admin-button, .register-button, .login-button, .save-button, .dashboard-button, .stat-button {
+    background-color: #1e9bc8;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.vote-button:hover, .admin-button:hover, .register-button:hover, .login-button:hover, .save-button:hover, .dashboard-button:hover, .stat-button:hover {
+    background-color: #005f7f;
+}
+
+/* Container Styles */
+.login-container, .register-container, .edit-container, .success-container, .process-container, .help-container, .candidate-container, .stat-container, .voting-container, .voter-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-card, .candidate-card, .dashboard-card, .voter-card, .details-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Styles */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #003366;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Illustration */
+.header-illustration {
+    background-image: url('path/to/voting-illustration.svg');
+    height: 200px;
+    background-size: cover;
+    margin-bottom: 10px;
+}

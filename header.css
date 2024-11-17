@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #003366; /* Dark blue background */
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.logo img {
+    max-width: 100%; /* Logo will take up to 100% of its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.college-name h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    margin-left: auto;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    background-color: white;
+    margin: 3px 0;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Optional hover effect for the menu icon */
+.menu-icon:hover span {
+    background-color: #cccccc;
+}
+
+/* Positioning the 'Online Voting System' text */
+.voting-system-text {
+    position: absolute;
+    bottom: 10px; /* Adjusted for better mobile responsiveness */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Hidden side drawer */
+.side-drawer {
+    height: 100%;
+    width: 0; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #003366; /* Same background as the header */
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1;
+    padding-top: 60px;
+}
+
+.side-drawer a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-drawer a:hover {
+    background-color: #575757;
+}
+
+.side-drawer .close-btn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: white; /* White box */
+    color: #003366; /* Blue text color */
+    padding: 4px 14px; /* Padding inside the button */
+    border: 2px solid #003366; /* Blue border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 15px; /* Text size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.back-button:hover {
+    background-color: #0678f2; /* Blue background on hover */
+    color: white; /* White text on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .college-name h1 {
+        font-size: 16px; /* Adjust font size on smaller screens */
+    }
+
+    .voting-system-text {
+        font-size: 24px; /* Adjust font size on smaller screens */
+        bottom: 5px;
+    }
+
+    .logo img {
+        max-width: 80%; /* Scale logo to 80% of container width on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .college-name h1 {
+        font-size: 14px; /* Further reduce font size for very small screens */
+    }
+
+    .voting-system-text {
+        font-size: 20px; /* Further reduce font size */
+    }
+
+    .logo img {
+        max-width: 70%; /* Further scale logo to 70% of container width on small screens */
+    }
+
+    .menu-icon {
+        width: 25px;
+        height: 20px;
+    }
+
+    .menu-icon span {
+        height: 3px; /* Make the menu icon smaller on mobile */
+    }
+    
+}
