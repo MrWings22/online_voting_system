@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="header.css">
 <body>
     <header>
-    <div class="header-container">
+        <div class="header-container">
             <!-- College logo -->
             <div class="logo">
                 <img src="uploads/collegelogo.png" alt="College Logo">

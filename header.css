@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 1;
+    padding: 1;
     box-sizing: border-box;
 }
 
@@ -21,10 +21,9 @@ header {
 }
 
 .logo img {
-    max-width: 100%; /* Logo will take up to 100% of its container */
-    height: auto; /* Maintain aspect ratio */
+    width: 80px; /* Adjust size of the logo */
+    height: auto;
 }
-
 
 .college-name h1 {
     font-size: 18px;
@@ -143,7 +142,7 @@ header {
     }
 
     .logo img {
-        max-width: 80%; /* Scale logo to 80% of container width on medium screens */
+        width: 60px; /* Make logo smaller on mobile */
     }
 }
 
@@ -157,7 +156,7 @@ header {
     }
 
     .logo img {
-        max-width: 70%; /* Further scale logo to 70% of container width on small screens */
+        width: 50px; /* Further reduce logo size */
     }
 
     .menu-icon {
