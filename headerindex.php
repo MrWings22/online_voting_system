@@ -33,7 +33,6 @@
     <!-- Hidden side drawer -->
     <div id="sideDrawer" class="side-drawer">
         <a href="javascript:void(0)" class="close-btn" onclick="closeDrawer()">&times;</a>
-        <a href="adminlogin.php">Admin Login</a>
         <a href="about.php">About</a>
     </div>
 

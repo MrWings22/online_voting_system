@@ -1,8 +1,6 @@
 <?php
 session_start();
 include 'db_connection.php';  // Connect to the database
-require_once 'header_back.php';
-renderHeader('index.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['ad_username'];
