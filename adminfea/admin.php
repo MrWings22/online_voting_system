@@ -1,8 +1,7 @@
 <?php
 session_start();
 include 'db_connection.php';
-require_once 'header_back.php';
-renderHeader('index.php');
+include 'adminfea\header.php';
 // Ensure only admin can access this page
 if (!isset($_SESSION['ad_username'])) {
     header("Location: adminlogin.php");

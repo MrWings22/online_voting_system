@@ -1,0 +1,128 @@
+* {
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #003366; /* Dark blue background */
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.logo img {
+    width: 80px; /* Adjust size of the logo */
+    height: auto;
+}
+
+.college-name h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    margin-left: auto;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    background-color: white;
+    margin: 3px 0;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Optional hover effect for the menu icon */
+.menu-icon:hover span {
+    background-color: #cccccc;
+}
+
+/* Positioning the 'Online Voting System' text */
+.voting-system-text {
+    position: absolute;
+    bottom: 10px; /* Adjusted for better mobile responsiveness */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: white; /* White box */
+    color: #003366; /* Blue text color */
+    padding: 4px 14px; /* Padding inside the button */
+    border: 2px solid #003366; /* Blue border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 15px; /* Text size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.back-button:hover {
+    background-color: #0678f2; /* Blue background on hover */
+    color: white; /* White text on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .college-name h1 {
+        font-size: 16px; /* Adjust font size on smaller screens */
+    }
+
+    .voting-system-text {
+        font-size: 24px; /* Adjust font size on smaller screens */
+        bottom: 5px;
+    }
+
+    .logo img {
+        width: 60px; /* Make logo smaller on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .college-name h1 {
+        font-size: 14px; /* Further reduce font size for very small screens */
+    }
+
+    .voting-system-text {
+        font-size: 20px; /* Further reduce font size */
+    }
+
+    .logo img {
+        width: 50px; /* Further reduce logo size */
+    }
+    
+}

@@ -1,6 +1,6 @@
 <?php
-require_once 'header_back.php';
-renderHeader('index.php');
+include 'header.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,6 +80,8 @@ renderHeader('index.php');
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for icons -->
-    <?php include 'footerall.php'; ?>
+    <footer>
+        <p>&copy; 2024 BVM Holy Cross College Cherpunkal. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
