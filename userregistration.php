@@ -14,74 +14,95 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date_of_birth = $_POST['date_of_birth'];
     $gender = $_POST['gender'];
     $batch = $_POST['batch'];
-    // Check if the username already exists in the database
-    $check_query = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $check_query);
 
-    if (mysqli_num_rows($result) > 0) {
-        // Username already exists
-        echo "<script>
-                alert('Username is already taken. Please choose another one.');
-                window.location.href = 'userregistration.php';
-              </script>";
-    } else {
-        // Insert the new user if the username is not taken
-        $query = "INSERT INTO users (username, password, fname, lname, department, year, date_of_birth, gender, batch)
-                  VALUES ('$username', '$password', '$fname', '$lname', '$department', '$year', '$date_of_birth', '$gender', '$batch')";
+    $query = "INSERT INTO users (username, password, fname, lname, department, year, date_of_birth, gender,batch)
+              VALUES ('$username', '$password', '$fname', '$lname', '$department', '$year', '$date_of_birth', '$gender','$batch')";
+    
 
         if (mysqli_query($conn, $query)) {
-            // Show a JavaScript alert and redirect
-            echo "<script>
-                    alert('Registration successful!');
-                    window.location.href = 'login.php';
-                  </script>";
-        } else {
-            echo "Error: " . mysqli_error($conn);
-        }
+        // Show a JavaScript alert and redirect
+        echo "<script>
+                alert('Registration successful!');
+                window.location.href = 'login.php';
+              </script>";
+    } else {
+        echo "Error: " . mysqli_error($conn);
     }
+
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Voting System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="userregistration.css">
 </head>
 <body>
     <div class="register-container">
         <h2>Register</h2>
         <form method="POST" action="userregistration.php">
-            <label>Username</label>
-            <input type="text" name="username" required><br>
-            <label>Password</label>
-            <input type="password" name="password" required><br>
-            <label>First Name</label>
-            <input type="text" name="fname" required><br>
-            <label>Last Name</label>
-            <input type="text" name="lname" required><br>
-            <label for="department">Department:</label>
-            <select name="department" id="department" required>
-                <option value="">--Select Department--</option>
-                <option value="Computer Science">Computer Science</option>
-                <option value="Social Work">Social Work</option>
-                <option value="Commerce">Commerce</option>
-                <option value="Media">Media</option>
-            </select><br>
-            <label for="batch">Batch:</label>
-            <select name="batch" id="batch">
-                <option value="">--Batch--</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-            </select><br>
-            <label>Year</label>
-            <input type="text" name="year" required><br>
-            <label>Date of Birth</label>
-            <input type="date" name="date_of_birth" required><br>
-            <label>Gender</label>
-            <select name="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select><br>
+            <div class="input-group">
+                <label><i class="fas fa-user"></i> Username</label>
+                <input type="text" name="username" required><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-lock"></i> Password</label>
+                <input type="password" name="password" required><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-id-card"></i> First Name</label>
+                <input type="text" name="fname" required><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-id-card-alt"></i> Last Name</label>
+                <input type="text" name="lname" required><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-building"></i> Department</label>
+                <select name="department" id="department" required>
+                    <option value="">--Select Department--</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Social Work">Social Work</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Media">Media</option>
+                </select><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-users"></i> Batch</label>
+                <select name="batch" id="batch">
+                    <option value="">--Batch--</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                </select><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-calendar-alt"></i> Year</label>
+                <input type="text" name="year" required><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-birthday-cake"></i> Date of Birth</label>
+                <input type="date" name="date_of_birth" required><br>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-venus-mars"></i> Gender</label>
+                <select name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select><br>
+            </div>
+
             <input type="submit" value="Register">
         </form>
     </div>

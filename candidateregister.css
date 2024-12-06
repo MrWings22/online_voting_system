@@ -1,0 +1,143 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.registration-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Label Styling */
+label {
+    font-size: 16px;
+    color: #003366;
+    font-weight: bold;
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"], input[type="file"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background-color: #003366;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0055cc;
+}
+
+/* Icon Styling */
+input[type="file"] {
+    padding-left: 30px;
+}
+
+input[type="file"]:before {
+    content: url('https://img.icons8.com/ios/50/000000/photo.png'); /* File icon */
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+select, input[type="checkbox"] {
+    width: auto;
+    margin-left: 10px;
+}
+
+/* Backpapers Section */
+#backpapers_count_container {
+    display: none;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* Floating Labels */
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #0055cc;
+}
+
+/* Icon for backpapers section */
+#backpapers_count_container input[type="number"]:before {
+    content: '\f00c'; /* Checkmark icon for backpapers count */
+    font-family: 'FontAwesome';
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+/* Digital Signature Section */
+#signature-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between checkbox and label */
+}
+
+#signature-container label {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+#signature-container input[type="checkbox"] {
+    width: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-container {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}

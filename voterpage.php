@@ -29,24 +29,27 @@ $resultPastElections = mysqli_query($conn, $queryPastElections);
 <html>
 <head>
     <title>Vote - Online Voting System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="voterpage.css">
 </head>
 <body>
     <h2>Welcome, <?php echo $user['fname']; ?>!</h2>
-
+    <div class="container container-left">  
     <!-- Profile Overview -->
+    <div class="container container-left">
     <h3>Profile Overview</h3>
     <ul>
-        <li><strong>Full Name:</strong> <?php echo $user['fname'] . ' ' . $user['lname']; ?></li>
-        <li><strong>Username:</strong> <?php echo $user['username']; ?></li>
-        <li><strong>Department:</strong> <?php echo empty($user['department']) ? 'Not selected yet' : $user['department']; ?></li>
-        <li><strong>Year:</strong> <?php echo empty($user['year']) ? 'Not selected yet' : $user['year']; ?></li>
-        <li><strong>Batch:</strong> <?php echo empty($user['batch']) ? 'Not selected yet' : $user['batch']; ?></li>
+    <li><strong><i class="fas fa-user"></i> Full Name:</strong> <?php echo $user['fname'] . ' ' . $user['lname']; ?></li>
+    <li><strong><i class="fas fa-user-circle"></i> Username:</strong> <?php echo $user['username']; ?></li>
+    <li><strong><i class="fas fa-building"></i> Department:</strong> <?php echo empty($user['department']) ? 'Not selected yet' : $user['department']; ?></li>
+    <li><strong><i class="fas fa-calendar-alt"></i> Year:</strong> <?php echo empty($user['year']) ? 'Not selected yet' : $user['year']; ?></li>
+    <li><strong><i class="fas fa-users"></i> Batch:</strong> <?php echo empty($user['batch']) ? 'Not selected yet' : $user['batch']; ?></li>
     </ul>
-
+    </div>
+<div class="container container-left">
+<h3><i class="fas fa-vote-yea"></i> Voting Options</h3>
     <form method="POST" action="votingpage.php">
-        <br><br>
-
-        
+        <br><br>     
             <h4>Select Your Department, Batch, and Year</h4>
             <!-- Department Selection -->
             <label for="department">Department:</label>
@@ -76,13 +79,9 @@ $resultPastElections = mysqli_query($conn, $queryPastElections);
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <!-- Add more batches as needed -->
-            </select>
-       
+            </select>     
 
         <br><br>
-
-        <!-- Option to Show available elections if voting is open -->
-        <h3>Voting Options</h3>
         <?php if (mysqli_num_rows($resultElections) > 0) { ?>
             <label for="election">Select an Ongoing Election:</label>
             <select name="election_id" id="election" required>
@@ -98,10 +97,11 @@ $resultPastElections = mysqli_query($conn, $queryPastElections);
         <?php } else { ?>
             <p>No ongoing elections at the moment.</p>
         <?php } ?>
-
+        </div>
         <br><br>
 
         <!-- Option to View Results and Show ended elections -->
+        <div class="container container-left">
         <h3>View Election Results</h3>
         <?php if (mysqli_num_rows($resultPastElections) > 0) { ?>
             <p>Past Elections:</p>
@@ -116,6 +116,8 @@ $resultPastElections = mysqli_query($conn, $queryPastElections);
         <?php } else { ?>
             <p>No past elections available for result viewing.</p>
         <?php } ?>
+        </div>
+        </div>
     </form>
     <?php include 'footerall.php'; ?>
 

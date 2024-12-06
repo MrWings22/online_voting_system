@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Voting System-Welcome</title>
+    <title>College Header</title>
     <link rel="stylesheet" href="header.css">
+</head>
 <body>
     <header>
         <div class="header-container">
@@ -32,8 +33,9 @@
 
     <!-- Hidden side drawer -->
     <div id="sideDrawer" class="side-drawer">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeDrawer()">&times;</a>
-        <a href="about.php">About</a>
+        <a href="javascript:void(0)" class="close-btn" onclick="closeDrawer()">&times;</a><br><br>
+        <a href="about.php"><i class="fas fa-info-circle"></i> About</a>
+
     </div>
 
     <script>
@@ -44,6 +46,13 @@
         function closeDrawer() {
             document.getElementById("sideDrawer").style.width = "0";
         }
+        function toggleMenu() {
+    const menuIcon = document.querySelector('.menu-icon');
+    menuIcon.classList.toggle('active');
+    openDrawer();
+}
+
     </script>
+</body>
 </body>
 </html>

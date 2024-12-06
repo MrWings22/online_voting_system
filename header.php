@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Voting System</title>
+    <title>College Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="header.css">
 </head>
 <body>
@@ -33,13 +34,14 @@
 
     <!-- Hidden side drawer -->
     <div id="sideDrawer" class="side-drawer">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeDrawer()">&times;</a>
-        <a href="index.php">Back</a>
-        <a href="candidateregister.php">Candidate register</a>
-        <a href="candidate_login.php">Candidate Login</a>
-        <a href="about.php">About</a>
-        <a href="logout1.php">Logout</a>
+    <a href="javascript:void(0)" class="close-btn" onclick="closeDrawer()">&times;</a><br><br>
+    <a href="index.php"><i class="fas fa-arrow-left"></i> Back</a>
+    <a href="candidateregister.php"><i class="fas fa-user-plus"></i> Candidate Register</a>
+    <a href="candidate_login.php"><i class="fas fa-sign-in-alt"></i> Candidate Login</a>
+    <a href="contctadmin.php"><i class="fas fa-info-circle"></i> Contact</a>
+    <a href="logout1.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
+
 
     <script>
         function openDrawer() {

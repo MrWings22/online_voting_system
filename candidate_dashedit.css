@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    color: #333;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form Container */
+form {
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form table {
+    width: 100%;
+}
+
+form table td {
+    padding: 15px;
+}
+
+/* Form Input Styles */
+label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Photo Display */
+img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Button Styling */
+button,
+input[type="submit"] {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"].btn-edit {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="submit"].btn-edit:hover {
+    background-color: #0056b3;
+}
+
+input[type="submit"].btn-submit {
+    background-color: #28a745;
+    color: white;
+}
+
+input[type="submit"].btn-submit:hover {
+    background-color: #218838;
+}
+
+/* Centering the Button */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Icon Styling */
+label i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+/* Readonly Fields */
+input[readonly], textarea[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* Hover Effects for Inputs */
+input[type="text"]:hover,
+select:hover,
+textarea:hover {
+    border-color: #007bff;
+}
+
+/* Page Header */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Form Header */
+h3 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* Logout Link */
+.logout-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.logout-link a {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.logout-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #007bff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

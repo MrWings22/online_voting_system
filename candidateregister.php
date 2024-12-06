@@ -88,7 +88,7 @@ $query = "INSERT INTO candidate (username, admission_no, position, fullname, gen
 if (mysqli_query($conn, $query)) {
     echo "<script>
     alert('Registration successful!');
-    window.location.href = 'voterpage.php';
+    window.location.href = 'login.php';
     </script>";
 } else {
     echo "Error: " . mysqli_error($conn);
@@ -106,7 +106,7 @@ if (mysqli_query($conn, $query)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Registration</title>
-   
+    <link rel="stylesheet" href="candidateregister.css">
     <script>
         function toggleBackpapersInput() {
             var backpapersSelect = document.getElementById('backpapers');
@@ -189,8 +189,10 @@ if (mysqli_query($conn, $query)) {
             <input type="file" id="photo" name="photo" accept="image/*" required>
 
             <label for="signature">Digital Signature:</label>
+            <div id="signature-container">
             <input type="checkbox" id="signature" name="signature" required>
             <label for="signature">I confirm that the information provided is accurate and complete.</label>
+            </div>
 
             <input type="submit" value="Register">
         </form>

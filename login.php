@@ -19,25 +19,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Voting System</title>
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="login.css"> <!-- External CSS for styling -->
 </head>
 <body>
     <div class="login-container">
         <h2>User Login</h2>
         <form method="POST" action="login.php">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" required>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-            <input type="checkbox" id="showPassword"> 
+            <div class="input-group">
+                <label for="username"><i class="fas fa-user"></i> Username</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <div class="input-group-checkbox">
+            <input type="checkbox" id="showPassword">
             <label for="showPassword">Show Password</label>
+            </div>
+
             <input type="submit" value="Login">
         </form>
     </div>
@@ -53,8 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         });
     </script>
-<?php ob_end_flush(); ?>
 
+<?php ob_end_flush(); ?>
 <?php include 'footerall.php'; ?>
+
 </body>
 </html>

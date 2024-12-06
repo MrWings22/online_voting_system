@@ -1,0 +1,210 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #032649; /* Dark background */
+}
+.navbar .navbar-brand, .navbar .nav-link {
+    color: rgb(158, 142, 208);
+}
+.navbar .nav-link:hover {
+    color: #ffc107; /* Gold on hover */
+}
+
+/* Card Styles */
+.card {
+    background-color: #495057; /* Dark card background */
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Form Styles */
+.form-control {
+    border: 1px solid #6c757d; /* Light border */
+    border-radius: 5px;
+    background-color: #12212f; /* Light input background */
+    color: #495057;
+}
+.form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff; /* Blue border on focus */
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+.btn-success:hover {
+    background-color: #218838;
+}
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
+}
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* Table Styles */
+.table-dark {
+    background-color: #343a40;
+    color: white;
+}
+.table-dark thead th {
+    border-bottom: 2px solid #495057;
+}
+.table-dark tbody tr:hover {
+    background-color: #495057;
+}
+
+/* General Utility Styles */
+.container {
+    margin-top: 20px;
+}
+/* Navbar Styles */
+.navbar {
+    background-color: #03213e; /* Dark background */
+    color: rgb(40, 7, 85);
+}
+.navbar-brand,
+.nav-link {
+    color: white !important;
+}
+.nav-link:hover {
+    color: #ffc107 !important; /* Gold on hover */
+}
+.navbar-text {
+    color: white !important;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #b21f2d;
+    border-color: #9f1c25;
+}
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+.btn-info:hover {
+    background-color: #117a8b;
+    border-color: #10707f;
+}
+
+/* Cards */
+.card {
+    border-radius: 10px;
+}
+.card-title {
+    font-weight: bold;
+    color: #f8f9fa;
+}
+.card-body {
+    background-color: #6c757d;
+    border-radius: 10px;
+}
+
+/* Table */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table-dark {
+    background-color: #343a40;
+    color: #fff;
+}
+.table-dark th,
+.table-dark td {
+    border: 1px solid #454d55;
+}
+.table-dark tr:hover {
+    background-color: #495057;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    font-size: 14px;
+}
+
+/* Custom Text */
+.text-white {
+    color: white !important;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-muted {
+    color: #6c757d !important;
+}
+
+
+  

@@ -1,9 +1,6 @@
 <?php
 session_start();
 include 'db_connection.php';
-require_once 'header_back.php';
-// Render the header with the appropriate back link
-renderHeader('login.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -22,6 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Invalid username or admission number!";
     }
 }
+require_once 'header_back.php';
+renderHeader('login.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,14 +29,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Login</title>
+    <link rel="stylesheet" href="candidate_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome Icons -->
 </head>
 <body>
+
     <h2>Candidate Login</h2>
     <form action="candidate_login.php" method="POST">
-        <label>Username:</label>
-        <input type="text" name="username" required><br>
-        <label>Admission Number:</label>
-        <input type="text" name="admission_no" required><br>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required placeholder="Enter your username"><br>
+
+        <label for="admission_no">Admission Number:</label>
+        <input type="text" name="admission_no" id="admission_no" required placeholder="Enter your admission number"><br>
+
         <input type="submit" value="Login">
     </form>
 

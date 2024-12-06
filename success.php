@@ -27,7 +27,7 @@ unset($_SESSION['batch']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success - Vote Submitted</title>
     <style>
-        .success-container {
+        .success-containerr {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -68,13 +68,14 @@ unset($_SESSION['batch']);
 </head>
 <body>
 
-<div class="success-container">
+<div class="success-containerr">
     <div class="success-box">
         <h2>Vote Submitted Successfully!</h2>
         <p>Thank you for participating in the election. Your vote has been recorded successfully.</p>
+        <p>If you have any questions or need further assistance, please contact the election committee.</p>
         <a href="voterpage.php">Go Back to Home</a>
     </div>
 </div>
-<?php include 'footerall.php'; ?>
+
 </body>
 </html>

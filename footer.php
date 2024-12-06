@@ -42,12 +42,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: white;
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .footer-text {
             flex: 1; /* Grow to fill available space */
-            text-align: left; /* Align text to the left */
+            color: white;
+            text-align: center; /* Align text to the left */
         }
 
         .footer-links {

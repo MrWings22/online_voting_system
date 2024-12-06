@@ -127,6 +127,8 @@ $is_editing = isset($_POST['edit']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Dashboard</title>
+    <link rel="stylesheet" href="candidate_dashedit.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <h2>Welcome, <?php echo htmlspecialchars($candidate['fullname']); ?></h2>
@@ -134,20 +136,20 @@ $is_editing = isset($_POST['edit']);
     <!-- Candidate details -->
     <h3>Your Details</h3>
     <form action="candidate_dashedit.php" method="POST" enctype="multipart/form-data">
-        <label>Full Name:</label>
-        <input type="text" name="fullname" value="<?php echo htmlspecialchars($candidate['fullname']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
+    <label><i class="fas fa-user"></i>Full Name:</label>
+    <input type="text" name="fullname" value="<?php echo htmlspecialchars($candidate['fullname']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
 
-        <label>Year of Study:</label>
-        <input type="text" name="year" value="<?php echo htmlspecialchars($candidate['year']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
+    <label><i class="fas fa-graduation-cap"></i>Year of Study:</label>
+    <input type="text" name="year" value="<?php echo htmlspecialchars($candidate['year']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
 
-        <label>Batch:</label>
-        <input type="text" name="batch" value="<?php echo htmlspecialchars($candidate['batch']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
+    <label><i class="fas fa-users"></i>Batch:</label>
+    <input type="text" name="batch" value="<?php echo htmlspecialchars($candidate['batch']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
 
-        <label>Department:</label>
-        <input type="text" name="department" value="<?php echo htmlspecialchars($candidate['department']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
+    <label><i class="fas fa-building"></i>Department:</label>
+    <input type="text" name="department" value="<?php echo htmlspecialchars($candidate['department']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
 
-        <label>Position:</label>
-        <input type="text" name="position" value="<?php echo htmlspecialchars($candidate['position']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
+    <label><i class="fas fa-flag"></i>Position:</label>
+    <input type="text" name="position" value="<?php echo htmlspecialchars($candidate['position']); ?>" <?php echo !$is_editing ? 'readonly' : ''; ?> required><br>
 
         <!-- Select election -->
         <label>Select Election:</label>
@@ -180,9 +182,8 @@ $is_editing = isset($_POST['edit']);
             <input type="hidden" name="edit" value="true">
             <input type="submit" value="Edit">
         <?php endif; ?>
+        <a href="logout.php">Logout</a>
     </form>
-
-    <a href="logout.php">Logout</a>
 
     <?php include 'footerall.php'; ?>
 </body>

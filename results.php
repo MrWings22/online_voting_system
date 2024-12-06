@@ -1,8 +1,6 @@
 <?php
 // Database connection
 include 'db_connection.php';
-require_once 'header_back.php';
-renderHeader('voterpage.php');
 
 // Fetch the winners for each position (the candidate with the highest votes)
 $winner_main_union = $conn->query("SELECT fullname, votes FROM candidate WHERE position = 'Main Union' ORDER BY votes DESC LIMIT 1")->fetch_assoc(); 
@@ -52,6 +50,5 @@ if (!$winner_class_rep) {
         echo $winner_class_rep['fullname'] . " with " . ($winner_class_rep['votes'] !== null ? $winner_class_rep['votes'] : '0') . " votes"; 
         ?>
     </p>
-    <?php include 'footerall.php'; ?>
 </body>
 </html>

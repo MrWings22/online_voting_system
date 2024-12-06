@@ -1,0 +1,85 @@
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #2c3e50;
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #011350d9;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+/* Welcome title */
+.welcome-title {
+    font-size: 28px;
+    color: #2c3e50; /* Specific color for welcome message */
+    text-align: center;
+}
+
+/* Paragraph description */
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #7f8c8d;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Container for buttons and links */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Button styling */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1abc9c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #16a085;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Add icons to buttons */
+.btn i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Registration link styling */
+.register-link {
+    font-size: 16px;
+    color: #1abc9c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    color: #16a085;
+    text-decoration: underline;
+}
+

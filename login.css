@@ -1,41 +1,98 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f4f8;
 }
+
+/* Login Container */
 .login-container {
-    width: 30%;
-    margin: 100px auto;
-    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
 }
+
 h2 {
     text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
-input[type="text"], input[type="password"] {
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.input-group input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px;
+    margin-top: 8px;
+    font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
 }
-button {
+
+/* Icons inside input labels */
+.input-group i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+/* Focus Styles */
+.input-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Show Password Section */
+.input-group-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between checkbox and label */
+    margin-top: -10px; /* Adjust spacing to align better */
+}
+
+.input-group-checkbox input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Submit Button */
+input[type="submit"] {
     width: 100%;
-    padding: 10px;
-    background-color: #5cb85c;
-    color: white;
+    padding: 14px;
+    background-color: #3498db;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-button:hover {
-    background-color: #4cae4c;
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
 }
-.register-link {
-    text-align: center;
-    display: block;
-    margin-top: 10px;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 20px;
+    }
 }

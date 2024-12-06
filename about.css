@@ -1,0 +1,54 @@
+/* Reset and global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Section styling */
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #007BFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Icon styling (Bootstrap icons) */
+.section-title i {
+    font-size: 28px;
+    color: #0056b3;
+}
+
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
