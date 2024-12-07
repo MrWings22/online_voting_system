@@ -119,7 +119,6 @@ ul li a:hover {
     text-decoration: underline;
 }
 
-/* Professional Look for Voting Options */
 .options {
     margin: 20px 0;
 }
@@ -130,6 +129,32 @@ ul li a:hover {
 }
 
 .options h4 {
+    margin-top: 10px;
+}
+
+.results-containerr {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better look */
+}
+
+.results-title {
+    margin-bottom: 20px;
+    color: #343a40; /* Dark gray for title text */
+    font-weight: bold;
+}
+
+.table-responsive {
+    margin-top: 10px;
+}
+
+.table {
+    margin-bottom: 0; /* Prevent extra spacing below table */
+}
+
+.alert {
     margin-top: 10px;
 }
 

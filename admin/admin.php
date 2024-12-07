@@ -1,7 +1,10 @@
 <?php
 session_start();
 include 'db_connection.php';
-include 'headerindex.php';
+require_once 'header_back.php';
+
+// Render the header with the appropriate back link
+renderHeader('index.php');
 
 // Ensure only admin can access this page
 $username = $_SESSION['ad_username'];
@@ -118,7 +121,7 @@ $resultVoters = mysqli_query($conn, $queryVoters);
                 <div class="card-body">
                     <h5 class="card-title">Welcome to the Admin Panel</h5>
                     <p>Choose an option from the menu to manage elections, candidates, and other tasks.</p>
-                    <img src="images/collegeimage.png" class="img-fluid" alt="Welcome Image">
+                    <img src="uploads/collegeimage.png" class="img-fluid" alt="Welcome Image">
                 </div>
             </div>
         <?php } elseif ($section == 'create_election') { ?>

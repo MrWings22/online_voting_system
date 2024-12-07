@@ -27,70 +27,7 @@ if ($election_status && $election_status->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Results - Admin</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-        }
-        h1 {
-            text-align: center;
-            color: #007BFF;
-            margin-bottom: 30px;
-        }
-        .result-section {
-            margin: 20px 0;
-        }
-        h3 {
-            color: #333;
-            text-align: left;
-            border-bottom: 2px solid #007BFF;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        ul li {
-            background: #f8f9fa;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        ul li:hover {
-            background: #e9ecef;
-        }
-        .no-results {
-            color: red;
-            font-size: 1.2em;
-        }
-        .download-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .download-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="results.css">
 </head>
 <body>
     <div class="container">

@@ -1,124 +1,129 @@
-/* Header Styling Adjustments */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(90deg, #004080, #002046);
-    color: white;
-    padding: 15px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a professional shadow */
 }
 
+/* Header container */
 .header-container {
     display: flex;
     align-items: center;
+    background-color: #e3eaf2;
+    color: white;
+    padding: 10px 20px;
 }
 
+/* Logo */
 .logo img {
-    height: 60px; /* Slightly larger logo */
+    width: 60px;
+    height: auto;
     margin-right: 15px;
 }
 
-.college-name h1 {
-    font-size: 20px;
-    font-weight: bold;
+/* College name */
+.college-name p {
+    font-size: 22px;
     margin: 0;
-    color: white;
-    white-space: nowrap; /* Prevent text wrapping */
+    color: rgb(255, 255, 255); /* Added to make the college name white */
 }
 
+/* Voting system text */
 .voting-system-text {
+    text-align: center;
     font-size: 18px;
     font-weight: bold;
-    text-transform: uppercase;
-    margin-left: auto; /* Align to the right */
-    padding: 0 20px;
+    color: #ecf0f1;
+    background-color: #e4ebf2;
+    padding: 10px 0;
 }
 
+/* Menu icon (hamburger) */
 .menu-icon {
-    cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin-left: auto;
+    cursor: pointer;
+    position: relative;
 }
 
 .menu-icon span {
-    width: 30px;
+    display: block;
     height: 3px;
-    background: white;
-    border-radius: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Side Drawer Styles */
+/* Menu icon animation on toggle */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Side drawer */
 .side-drawer {
+    height: 100%;
     width: 0;
     position: fixed;
     top: 0;
-    right: 0;
-    height: 100%;
-    background-color: #002046;
-    color: white;
+    left: 0;
+    background-color: #34495e;
     overflow-x: hidden;
     transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px; /* Adds spacing at the top */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-    z-index: 1000; /* Ensures it's above the header and footer */
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
+/* Close button */
 .side-drawer .close-btn {
-    font-size: 30px;
-    color: white;
-    text-align: right;
-    margin-right: 20px;
-    margin-bottom: 20px; /* Adds space below the "X" */
-    cursor: pointer;
-}
-
-.side-drawer a {
-    padding: 15px 20px;
-    font-size: 18px;
-    text-decoration: none;
-    color: white;
-    display: block;
-    transition: all 0.2s;
-    margin: 10px 0; /* Adds vertical spacing between links */
-}
-
-.side-drawer a:hover {
-    background: #004080;
-    border-radius: 5px;
-}
-
-.close-btn {
     position: absolute;
     top: 10px;
     right: 20px;
-    font-size: 24px;
-}
-
-/* Back Button Styling */
-.back-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 30px;
     color: white;
-    background: #004080;
     text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.back-btn:hover {
-    background: #002046;
-    transform: translateY(-2px);
+/* Drawer links */
+.side-drawer a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
 }
 
-.back-btn:active {
-    background: #001530;
-    transform: translateY(0);
+.side-drawer a:hover {
+    background-color: #1abc9c;
+    color: white;
 }
 
+.side-drawer a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .college-name h1 {
+        font-size: 18px;
+    }
+    .voting-system-text {
+        font-size: 16px;
+    }
+}

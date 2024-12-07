@@ -1,4 +1,5 @@
 <?php
+include 'db_connection.php';
 require_once 'header_back.php';
 
 // Start the session
@@ -10,10 +11,6 @@ $previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'in
 // Render the header with the dynamic back link
 renderHeader($previousPage);
 
-// Include database connection
-include 'db_connection.php';
-
-// Define a variable for the alert message
 $alertMessage = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_message'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);

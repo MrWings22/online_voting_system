@@ -4,7 +4,7 @@ include 'db_connection.php';
 require_once 'header_back.php';
 
 // Render the header with the appropriate back link
-renderHeader('login.php');
+renderHeader('candidate_login.php');
 
 // Check if candidate is logged in
 if (!isset($_SESSION['candidate_id'])) {
@@ -45,8 +45,10 @@ $is_editing = isset($_POST['edit']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Dashboard</title>
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="candidate_dash.css">
+<link rel="stylesheet" href="candidate_dash.css">
 </head>
 <body>
     <h2>Welcome, <?php echo $candidate['fullname']; ?></h2>
@@ -162,23 +164,46 @@ $is_editing = isset($_POST['edit']);
 
 
     <!-- Option to View Results and Show ended elections -->
-    <h3>View Election Results</h3>
-        <?php if (mysqli_num_rows($resultPastElections) > 0) { ?>
-            <p>Past Elections:</p>
-            <ul>
-                <?php while ($pastElection = mysqli_fetch_assoc($resultPastElections)) { ?>
-                    <li>
-                        <?php echo $pastElection['title']; ?> (Ended on: <?php echo $pastElection['end_date']; ?>)
-                        - <a href="results.php?election_id=<?php echo $pastElection['election_id']; ?>">View Results</a>
-                    </li>
-                <?php } ?>
-            </ul>
-        <?php } else { ?>
-            <div class="marquee-container">
-            <p>No past result published.</p>
-            </div> 
-        <?php } ?>
-        </div>
+<h3>Election Results</h3>
+<form>
+    <table class="candidate-form">
+        <tr>
+            <td><label><i class="fas fa-calendar-check"></i>Elections:</label></td>
+            <td>
+                <?php if (mysqli_num_rows($resultPastElections) > 0): ?>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Election Title</th>
+                                <th>End Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($pastElection = mysqli_fetch_assoc($resultPastElections)): ?>
+                                <tr>
+                                    <td><?php echo $pastElection['title']; ?></td>
+                                    <td><?php echo $pastElection['end_date']; ?></td>
+                                    <td>
+                                        <a href="result_forcandidate.php?election_id=<?php echo $pastElection['election_id']; ?>" 
+                                           class="btn btn-primary btn-sm">
+                                           <i class="fas fa-eye"></i> View Results
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                <?php else: ?>
+                    <div class="alert alert-warning" role="alert">
+                        <i class="fas fa-info-circle"></i> No Results Published Yet.
+                    </div>
+                <?php endif; ?>
+            </td>
+        </tr>
+    </table>
+</form>
+
 
     <?php include 'footerall.php'; ?>
 </body>

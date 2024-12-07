@@ -34,6 +34,7 @@
     <!-- Hidden side drawer -->
     <div id="sideDrawer" class="side-drawer">
         <a href="javascript:void(0)" class="close-btn" onclick="closeDrawer()">&times;</a><br><br>
+        <a href="adminlogin.php"><i class="fas fa-user-shield"></i> Admin Login</a>
         <a href="about.php"><i class="fas fa-info-circle"></i> About</a>
 
     </div>

@@ -2,9 +2,9 @@
 session_start();
 include 'db_connection.php';
 require_once 'header_back.php';
-
-// Render the header with the appropriate back link
-renderHeader('admin.php');
+// Get the previous page URL using HTTP_REFERER, or fallback to index.php
+$previousPage = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'admin.php';
+renderHeader($previousPage);
 
 // Ensure only admin can access this page
 if (!isset($_SESSION['ad_username'])) {

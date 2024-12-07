@@ -133,13 +133,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <td><?php echo htmlspecialchars($candidate['votes']); ?></td>
                     <td>
                         <form action="admin_candida.php" method="POST" style="display:inline;">
-                            <input type="hidden" name="candidate_id" value="<?php echo $candidate['candidate_id']; ?>">
-                            <?php if ($candidate['approved']) { ?>
-                                <input type="submit" name="disapprove" value="Disapprove" onclick="return confirm('Are you sure you want to disapprove this candidate?');">
-                            <?php } else { ?>
-                                <input type="submit" name="approve" value="Approve" onclick="return confirm('Are you sure you want to approve this candidate?');">
-                            <?php } ?>
-                            <input type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure you want to delete this candidate?');">
+                        <input type="hidden" name="candidate_id" value="<?php echo $candidate['candidate_id']; ?>">
+        
+                        <!-- Approve/Disapprove buttons -->
+                        <?php if ($candidate['approved']) { ?>
+                        <input type="submit" name="disapprove" value="Disapprove" onclick="return confirm('Are you sure you want to disapprove this candidate?');">
+                        <?php } else { ?>
+                        <input type="submit" name="approve" value="Approve" onclick="return confirm('Are you sure you want to approve this candidate?');">
+                        <?php } ?>
+        
+                        <!-- Delete button -->
+                        <input type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure you want to delete this candidate?');">
+
+    
+                        <!-- View Details link -->
+                        <a href="candidate_details.php?candidate_id=<?php echo $candidate['candidate_id']; ?>" class="btn btn-info btn-sm" style="margin-left: 10px;">View Details</a>
                         </form>
                     </td>
                 </tr>

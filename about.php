@@ -23,7 +23,7 @@ renderHeader($previousPage);
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
-<div class="about-container">
+    <div class="about-container">
         <div class="section">
             <h2 class="section-title">
                 <i class="bi bi-building"></i> About Our College
