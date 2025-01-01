@@ -136,56 +136,85 @@ if (isset($_POST['change_password'])) {
             margin-bottom: 10px;
         }
 
-/* Voter ID Card Styling */
-.id-card {
-    width: 350px;
-    height: 220px;
-    border: 1px solid #ccc;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    background-color: #fdfdfd;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    position: relative;
+.voter-id-card {
+    width: 300px;
+    height: 450px;
+    border: 2px solid #3B2A77; /* Purple border */
+    border-radius: 15px;
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px auto; /* Center the card */
 }
 
-/* Header Section */
-.id-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.id-card-header h2 {
-    font-size: 16px;
+.voter-id-card-header {
+    background-color: #3B2A77; /* Purple header */
+    color: white;
     text-align: center;
-    color: #333;
-    flex-grow: 1;
+    padding: 15px;
 }
 
-/* Body Section */
-.id-card-body {
+.voter-id-card-header h2 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.voter-id-card-header p {
+    margin: 5px 0 0;
+    font-size: 12px;
+}
+
+.voter-id-card-body {
+    height: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.user-photo {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 50%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 36px;
+    color: #555;
+    font-weight: bold;
 }
 
-.details {
-    line-height: 1.6;
-    font-size: 14px;
+.user-info {
+    text-align: left;
+    font-size: 11px;
     color: #333;
+    margin: 10px 0;
 }
 
-.details p {
-    margin: 5px 0;
+.user-info h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+
+.voter-id-card-footer {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
 }
 
 /* Footer Section */
 .id-card-footer {
     text-align: center;
+    height: 5px;
     font-size: 12px;
     color: #666;
     position: absolute;
-    bottom: 10px;
+    bottom: 2px;
     left: 0;
     width: 100%;
     font-style: italic;
@@ -283,33 +312,38 @@ if (isset($_POST['change_password'])) {
 
 <!-- Voter ID Card Section -->
 <div class="profile-card" id="idCardSection" style="display:none;">
-    <div class="id-card">
-        <!-- Election Commission Header -->
-        <div class="id-card-header">
-            <div class="logo"></div>
-            <h2>VOTER ID CARD</h2>
-            <div class="eci-icon"></div>
+    <div class="voter-id-card">
+        <!-- Header -->
+        <div class="voter-id-card-header">
+            <h2>Bishop Vayalil Memorial Holy Cross College</h2>
+            <p>Cherpunkal, Pala, Kottayam, 686584</p>
         </div>
+        <h3>VOTER ID CARD</h3>
+        <!-- Photo and Details -->
+        <div class="voter-id-card-body">
+            <!-- User Photo Placeholder -->
+            <div class="user-photo">
+                <?php echo strtoupper(substr($user['fname'], 0, 1) . substr($user['lname'], 0, 1)); ?>
+            </div>
 
-        <!-- Photo Placeholder and User Details -->
-        <div class="id-card-body">
-
-            <!-- Details Section -->
-            <div class="details">
-                <p><strong>Full Name:</strong> <?php echo $user['fname'] . ' ' . $user['lname']; ?></p>
+            <!-- User Info -->
+            <div class="user-info">
+                <h3><?php echo $user['fname'] . ' ' . $user['lname']; ?></h3>
                 <p><strong>Voter ID:</strong> <?php echo $user['user_id']; ?></p>
+                <p><strong>Date of Birth:</strong> <?php echo $user['date_of_birth']; ?></p>
                 <p><strong>Department:</strong> <?php echo $user['department']; ?></p>
                 <p><strong>Batch:</strong> <?php echo $user['batch']; ?></p>
-                <p><strong>Year:</strong> <?php echo date('Y', strtotime($user['date_of_birth'])); ?></p>
+                <p><strong>Year:</strong> <?php echo $user['year']; ?></p>
             </div>
         </div>
 
-        <!-- Footer Section -->
-        <div class="id-card-footer">
-            <p>VOTER ID CARD</p>
+        <!-- Footer -->
+        <div class="voter-id-card-footer">
+            <p>VOTER ID Card for Students</p>
         </div>
     </div>
 </div>
+
         <button class="toggle-button" onclick="toggleIdCard()">Show/Hide Voter ID Card</button>
     </div>
     
