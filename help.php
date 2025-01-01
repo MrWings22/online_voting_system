@@ -37,16 +37,14 @@ renderHeader('index.php');
             color: #333;
         }
 
-        footer {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
+        .help-section img {
+        display: block;
+        max-width: 40%;  
+        height: auto;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+}
     </style>
 </head>
 <body>
@@ -63,14 +61,17 @@ renderHeader('index.php');
 
         <section class="help-section">
             <h2>How to Vote</h2>
-            <p>After logging in, navigate to the "Voting" section. You will see a list of candidates. Select the candidate you wish to vote for and click the "Submit Vote" button. You will receive a confirmation that your vote has been recorded.</p>
+            <p>⬛> After logging in, you will navigate to the "main page" section.Select the election you need to cast the vote.</p>
+            <img src="uploads/Screenshot 1.png" alt="Voting Example">
+            <p>⬛> You will see a list of candidates. Select the candidate you wish to vote for and click the "Submit Vote" button.</p>
+            <img src="uploads/Screenshot 2.png" alt="selecting candidates">
+            <p>⬛> You will receive a message to confirm you vote.</p>
+            <img src="uploads/Screenshot 3.png" alt="Voting Confirmation">
+            <p>⬛> You will receive a confirmation that your vote has been recorded.</p>
+            <img src="uploads/Screenshot 4.png" alt="confirmation">
         </section>
-        <a href="contctadmin.php">contact if any issues</a>
+
+        <a href="contctadmin.php">Contact if any issues</a>
     </main>
-
-    <footer>
-        <p>&copy; 2024 BVM Holy Cross College Cherpunkal. All Rights Reserved.</p>
-    </footer>
-
 </body>
 </html>

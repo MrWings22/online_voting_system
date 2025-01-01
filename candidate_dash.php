@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $query);
 $candidate = mysqli_fetch_assoc($result);
 
 // Fetch elections that have ended
-$queryPastElections = "SELECT * FROM elections WHERE CURDATE() > end_date";
+$queryPastElections = "SELECT * FROM elections WHERE NOW() > end_date";
 $resultPastElections = mysqli_query($conn, $queryPastElections);
 // Fetch available elections
 $elections_query = "SELECT * FROM elections";
@@ -203,9 +203,6 @@ $is_editing = isset($_POST['edit']);
         </tr>
     </table>
 </form>
-
-
-    <?php include 'footerall.php'; ?>
 </body>
 </html>
 <?php

@@ -3,11 +3,17 @@ session_start();
 include 'db_connection.php';
 require_once 'header_back.php';
 
+// Ensure only admin can access this page
+if (!isset($_SESSION['ad_username'])) {
+    header('Location: adminlogin.php'); // Redirect to login if not logged in
+    exit();
+}
+
+$username = $_SESSION['ad_username'];
+
 // Render the header with the appropriate back link
 renderHeader('index.php');
 
-// Ensure only admin can access this page
-$username = $_SESSION['ad_username'];
 $query = "SELECT * FROM adminlogin WHERE ad_username = '$username'";
 $result = mysqli_query($conn, $query);
 
@@ -19,15 +25,20 @@ if (isset($_POST['create_election'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $start_date = $_POST['start_date'];
+    $start_time = $_POST['start_time'];
     $end_date = $_POST['end_date'];
     $end_time = $_POST['end_time'];
+    $result_publish_date = $_POST['result_publish_date'];
+    $result_publish_time = $_POST['result_publish_time'];
 
     // Combine the end date and end time into a single datetime field
+    $start_datetime = $start_date . ' ' . $start_time;
     $end_datetime = $end_date . ' ' . $end_time;
+    $result_publish_datetime = $result_publish_date.' '.$result_publish_time;
 
     // Insert the new election into the database with end datetime
-    $query = "INSERT INTO elections (title, description, start_date, end_date)
-              VALUES ('$title', '$description', '$start_date', '$end_datetime')";
+    $query = "INSERT INTO elections (title, description, start_date, end_date, result_publish_time)
+              VALUES ('$title', '$description', '$start_datetime', '$end_datetime', '$result_publish_datetime')";
 
     if (mysqli_query($conn, $query)) {
         echo "Election created successfully!";
@@ -154,6 +165,14 @@ $resultVoters = mysqli_query($conn, $queryVoters);
                 <label>End Time</label>
                 <input type="time" name="end_time" id="end_time" class="form-control" required>
             </div>
+            <div class="form-group mb-3">
+                <label>Result Publish Date</label>
+                <input type="date" name="result_publish_date" id="result_publish_date" class="form-control" required>
+            </div>
+            <div class="form-group mb-3">
+                <label>Result PublishTime</label>
+                <input type="time" name="result_publish_time" id="result_publish_time" class="form-control" required>
+            </div>
             <button type="submit" name="create_election" class="btn btn-primary">Create Election</button>
         </form>
     </div>
@@ -271,7 +290,7 @@ $resultVoters = mysqli_query($conn, $queryVoters);
     <?php } ?>
 </div>
 <?php
-    include 'footerall.php';
+
 ?>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -334,6 +353,5 @@ $resultVoters = mysqli_query($conn, $queryVoters);
         }
     });
 </script>
-
 </body>
 </html>

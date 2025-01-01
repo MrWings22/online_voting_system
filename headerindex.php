@@ -36,6 +36,7 @@
         <a href="javascript:void(0)" class="close-btn" onclick="closeDrawer()">&times;</a><br><br>
         <a href="adminlogin.php"><i class="fas fa-user-shield"></i> Admin Login</a>
         <a href="about.php"><i class="fas fa-info-circle"></i> About</a>
+        <a href="help.php"><i class="fas fa-info-circle"></i> Help</a>
 
     </div>
 

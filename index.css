@@ -1,85 +1,124 @@
-/* General reset */
-body {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #2c3e50;
 }
 
-/* Main heading */
-h1 {
-    text-align: center;
-    font-size: 32px;
-    color: #011350d9;
-    margin-top: 30px;
-    margin-bottom: 10px;
+body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(255, 255, 255);
+    color: #333;
 }
 
-
-/* Welcome title */
-.welcome-title {
-    font-size: 28px;
-    color: #2c3e50; /* Specific color for welcome message */
-    text-align: center;
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #004080;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-/* Paragraph description */
-p {
-    text-align: center;
-    font-size: 18px;
-    color: #7f8c8d;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
+.back-btn:hover {
+    background: #002046;
+    transform: translateY(-2px);
 }
 
-/* Container for buttons and links */
-.container {
+.back-btn:active {
+    background: #001530;
+    transform: translateY(0);
+}
+
+.menu-icon {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    cursor: pointer;
 }
 
-/* Button styling */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1abc9c;
-    color: white;
-    padding: 12px 20px;
-    border: none;
+.menu-icon span {
+    display: block;
+    background-color: #333;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
     border-radius: 5px;
-    font-size: 18px;
-    text-decoration: none;
-    margin: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #16a085;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+/* Main Section */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85vh;
+    padding: 50px;
 }
 
-/* Add icons to buttons */
-.btn i {
-    margin-right: 10px;
-    font-size: 20px;
+.text-section {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
 }
 
-/* Registration link styling */
-.register-link {
+.text-section h1 {
+    font-size: 50px;
+    color: #333;
+    font-weight: bold;
+}
+
+.text-section p {
+    margin: 20px 0;
     font-size: 16px;
-    color: #1abc9c;
+    line-height: 1.6;
+    color: #555;
+}
+
+.text-section .btn {
+    display: inline-block;
     text-decoration: none;
-    transition: color 0.3s ease;
+    background-color: #5A67D8;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.register-link:hover {
-    color: #16a085;
-    text-decoration: underline;
+.text-section .btn:hover {
+    background-color: #434190;
 }
 
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image-section img {
+    width: 100%; /* Make the image take full width */
+    height: 100%; /* Make the image take full height */
+    object-fit: cover; /* Maintain clarity and proportions */
+    border-radius: 8px; /* Optional: Slight border radius for aesthetics */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .text-section, .image-section {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}

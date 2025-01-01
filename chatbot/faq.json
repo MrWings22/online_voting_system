@@ -1,0 +1,89 @@
+{
+    "questions": [
+      {
+        "question": "What is the voting process?",
+        "answer": "The voting process involves selecting your candidates from the list after logging in. You can cast your vote once you're authenticated."
+      },
+      {
+        "question": "How can I register?",
+        "answer": "To register, click on the 'New user? Register here' link on the homepage, fill out your details, and create an account."
+      },
+      {
+        "question": "What are the eligibility criteria?",
+        "answer": "Only current students of the college are eligible to vote. Please ensure your details are up to date in the system."
+      },
+      {
+        "question": "How can I change my vote?",
+        "answer": "Once you cast your vote, you cannot change it. Please double-check your selection before submitting."
+      },
+      {
+        "question": "Who can be a candidate?",
+        "answer": "Any student who is registered and meets the eligibility criteria can stand for election as a candidate."
+      },
+      {
+        "question": "When is the voting period?",
+        "answer": "The voting period will be posted on the official notice board."
+      },
+      {
+        "question": "Can I vote if I'm not on campus?",
+        "answer": "Yes, as long as you're a registered student, you can vote online through the voting portal from anywhere."
+      },
+      {
+        "question": "How do I know if my vote was successfully cast?",
+        "answer": "Once you submit your vote, you will receive a confirmation message on the screen, and you will also receive a confirmation email."
+      },
+      {
+        "question": "Can I vote for more than one candidate in a category?",
+        "answer": "No, you can only vote for one candidate in each category. Be sure to select your preferred candidate before submitting your vote."
+      },
+      {
+        "question": "What happens if I submit my vote accidentally?",
+        "answer": "Once you submit your vote, it cannot be undone. Be sure to double-check your selections before confirming."
+      },
+      {
+        "question": "Can I see the list of candidates before voting?",
+        "answer": "Yes, the list of candidates will be displayed along with their details, such as their background and manifesto, before you cast your vote."
+      },
+      {
+        "question": "How will the election results be announced?",
+        "answer": "The election results will be announced on the official college website and posted on the notice board after the voting period ends."
+      },
+      {
+        "question": "How do I contact support if I face issues during voting?",
+        "answer": "If you encounter any issues, you can contact the IT support team through the 'Contact Us' section on the voting portal."
+      },
+      {
+        "question": "Are the election results confidential?",
+        "answer": "Yes, your vote is anonymous and confidential. The system ensures that no one can trace your vote back to you."
+      },
+      {
+        "question": "What happens if I miss the voting deadline?",
+        "answer": "Once the voting period is over, no more votes can be cast. Be sure to vote before the deadline to ensure your voice is heard."
+      },
+      {
+        "question": "Is there a limit to how many times I can log in to vote?",
+        "answer": "Yes,you can only vote one time, but there is no limit on how many times you can log in to check your details."
+      },
+      {
+        "question": "Can I vote for candidates in different categories?",
+        "answer": "Yes, you can vote for candidates in different categories as long as you meet the eligibility criteria for each category."
+      },
+      {
+        "question": "What if I don’t agree with the election results?",
+        "answer": "If you have concerns or questions about the election process, you can contact the student body or the election committee for clarification."
+      },
+      {
+        "question": "How are the votes counted?",
+        "answer": "Votes are automatically counted through the voting system. The results are processed and displayed once the voting period ends."
+      },
+      {
+        "question": "Can I vote if I have outstanding fees?",
+        "answer": "Students with outstanding fees may not be eligible to vote. Please ensure your account is clear before attempting to vote."
+      },
+      {
+        "question": "Is there a way to view my voting history?",
+        "answer": "No, once you vote, it remains confidential. The system doesn't store or display your previous votes to ensure privacy."
+      }
+    ]
+  }
+  

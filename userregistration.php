@@ -87,7 +87,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="input-group">
                 <label><i class="fas fa-calendar-alt"></i> Year</label>
-                <input type="text" name="year" required><br>
+                <select name="year" id="year">
+                    <option value="">--Year--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select><br>
             </div>
 
             <div class="input-group">
@@ -107,6 +113,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 
-    <?php include 'footerall.php'; ?>
 </body>
 </html>

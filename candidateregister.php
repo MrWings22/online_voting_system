@@ -10,10 +10,9 @@ $gpa = '';
 $backpapers_count = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data safely
     $username = $_POST['username'];
     $admission_no = $_POST['admission_no'];
-    $position = $_POST['position']; // Safely access after form submission
+    $position = $_POST['position'];
     $fullname = $_POST['fullname'];
     $gender = $_POST['gender'];
     $year = $_POST['year'];
@@ -34,25 +33,32 @@ $gpa = $_POST['gpa'];
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+      // Check file size (limit to 2MB)
+      if ($_FILES["photo"]["size"] > 2000000) {
+        echo "<script>
+        alert('Sorry, your file is too large. Maximum size allowed is 2MB.');
+        window.location.href = 'candidateregister.php';
+        </script>";
+        $uploadOk = 0;
+    }
+
+    // Allow only certain file formats
+    if (!in_array($imageFileType, ['jpg', 'jpeg', 'png'])) {
+        echo "<script>
+        alert('Invalid file format. Only JPG, JPEG, and PNG files are allowed.');
+        window.location.href = 'candidateregister.php';
+        </script>";
+        $uploadOk = 0;
+    }
     // Check if image file is an actual image or fake image
     $check = getimagesize($_FILES["photo"]["tmp_name"]);
     if ($check !== false) {
-       
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-
-    // Check file size (limit to 2MB)
-    if ($_FILES["photo"]["size"] > 2000000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
-
-    // Allow certain file formats
-    if (!in_array($imageFileType, ['jpg', 'png', 'jpeg', 'gif'])) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        echo "<script>
+        alert('File is not an image.');
+        window.location.href = 'candidateregister.php';
+        </script>";
         $uploadOk = 0;
     }
 
@@ -148,6 +154,7 @@ if (mysqli_query($conn, $query)) {
 
             <label for="year">Year of Study:</label>
             <select id="year" name="year" required>
+                <option value="">Select Year</option>
                 <option value="1">1st Year</option>
                 <option value="2">2nd Year</option>
                 <option value="3">3rd Year</option>
@@ -164,7 +171,6 @@ if (mysqli_query($conn, $query)) {
                 <option value="Media ">Media</option>
                 <option value="Commerce">Commerce</option>
                 <option value="Social Work">Social Work</option>
-                <!-- Add more departments as needed -->
             </select>
 
             <label for="backpapers">Backpapers:</label>
@@ -187,6 +193,7 @@ if (mysqli_query($conn, $query)) {
 
             <label for="photo">Upload Photo:</label>
             <input type="file" id="photo" name="photo" accept="image/*" required>
+            <h6>file size limit is 2MB and only JPG, JPEG, and PNG files are allowed.</h6>
 
             <label for="signature">Digital Signature:</label>
             <div id="signature-container">
@@ -198,6 +205,5 @@ if (mysqli_query($conn, $query)) {
         </form>
     </div>
 
-    <?php include 'footerall.php'; ?>
 </body>
 </html>

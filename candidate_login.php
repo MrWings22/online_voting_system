@@ -1,13 +1,15 @@
 <?php
 session_start();
 include 'db_connection.php';
+require_once 'header_back.php';
+renderHeader('login.php'); // Include the header template here
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $admission_no = $_POST['admission_no'];
 
     // Validate login credentials based on username and admission number
-    $query = "SELECT * FROM candidate WHERE username = '$username' AND admission_no = '$admission_no'"; // Corrected table name
+    $query = "SELECT * FROM candidate WHERE username = '$username' AND admission_no = '$admission_no'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) == 1) {
@@ -15,12 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['candidate_id'] = $row['candidate_id'];
         header("Location: candidate_dash.php");
+        exit; // Ensure no further execution after the redirect
     } else {
-        echo "Invalid username or admission number!";
+        echo "<p style='color: red; text-align: center;'>Invalid username or admission number!</p>";
     }
 }
-require_once 'header_back.php';
-renderHeader('login.php');
 ?>
 
 <!DOCTYPE html>
@@ -30,21 +31,24 @@ renderHeader('login.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate Login</title>
     <link rel="stylesheet" href="candidate_login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome Icons -->
 </head>
 <body>
 
-    <h2>Candidate Login</h2>
-    <form action="candidate_login.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required placeholder="Enter your username"><br>
 
-        <label for="admission_no">Admission Number:</label>
-        <input type="text" name="admission_no" id="admission_no" required placeholder="Enter your admission number"><br>
+    <!-- Content Area for Login Form -->
+    <div class="content">
+        <div class="login-container">
+            <h2>Candidate Login</h2>
+            <form action="candidate_login.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required placeholder="Enter your username">
 
-        <input type="submit" value="Login">
-    </form>
+                <label for="admission_no">Admission Number:</label>
+                <input type="text" name="admission_no" id="admission_no" required placeholder="Enter your admission number">
 
-    <?php include 'footerall.php'; ?>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

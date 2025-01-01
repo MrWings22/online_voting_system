@@ -17,7 +17,7 @@ $pdf->Image($backgroundImage, 0, 0, $pdf->GetPageWidth(), $pdf->GetPageHeight(),
 
 
 // Add college logo
-$pdf->Image('uploads/fulllogo.png', 15, 15, 80, 25); // Adjust logo size and position to fit in the white space
+$pdf->Image('uploads/fulllogo.png', 15, 15, 85, 25); // Adjust logo size and position to fit in the white space
 
 // Add certificate title
 $pdf->SetFont('Arial', 'B', 28);
@@ -32,7 +32,7 @@ $pdf->Cell(0, 15, 'Certificate of Achievement', 0, 1, 'C');
 $pdf->SetFont('Arial', '', 16);
 $pdf->SetTextColor(0, 0, 0); // Black for message text
 $pdf->Ln(10);
-$pdf->MultiCell(0, 10, "This certificate is proudly presented to:", 0, 'C');
+$pdf->MultiCell(0, 10, "This certificate is proudly presented to", 0, 'C');
 
 // Add fancy font for the candidate's name
 $pdf->AddFont('fancyfont', '', 'Ballroomwaltz-GBam.php'); // Add the fancy font (ensure the font file is in the right folder)

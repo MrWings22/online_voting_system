@@ -53,6 +53,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             passwordInput.type = this.checked ? 'text' : 'password';
         });
     </script>
-  <?php include 'footerall.php'; ?>
 </body>
 </html>

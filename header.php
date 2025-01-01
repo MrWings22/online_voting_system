@@ -39,6 +39,7 @@
     <a href="candidateregister.php"><i class="fas fa-user-plus"></i> Candidate Register</a>
     <a href="candidate_login.php"><i class="fas fa-sign-in-alt"></i> Candidate Login</a>
     <a href="contctadmin.php"><i class="fas fa-info-circle"></i> Contact</a>
+    <a href="settings.php"><i class="fas fa-info-circle"></i> settings</a>
     <a href="logout1.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 

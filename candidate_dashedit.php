@@ -184,8 +184,6 @@ $is_editing = isset($_POST['edit']);
         <?php endif; ?>
         <a href="logout.php">Logout</a>
     </form>
-
-    <?php include 'footerall.php'; ?>
 </body>
 </html>
 

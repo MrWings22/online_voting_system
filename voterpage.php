@@ -17,11 +17,16 @@ $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
 // Fetch ongoing elections from the elections table
-$queryElections = "SELECT * FROM elections WHERE CURDATE() BETWEEN start_date AND end_date";
+$queryElections = "SELECT * FROM elections WHERE NOW() BETWEEN start_date AND end_date";
 $resultElections = mysqli_query($conn, $queryElections);
 
-// Fetch elections that have ended and are available for results
-$queryPastElections = "SELECT * FROM elections WHERE CURDATE() > end_date";
+// Fetch elections that have ended but results are not yet available
+$queryPendingResults = "SELECT * FROM elections 
+                        WHERE NOW() > end_date AND NOW() < result_publish_time";
+$resultPendingResults = mysqli_query($conn, $queryPendingResults);
+
+// Fetch elections whose results are available
+$queryPastElections = "SELECT * FROM elections WHERE NOW() >= result_publish_time";
 $resultPastElections = mysqli_query($conn, $queryPastElections);
 ?>
 
@@ -75,42 +80,54 @@ $resultPastElections = mysqli_query($conn, $queryPastElections);
             </form>
         </div>
 
-<!-- Past Election Results -->
-<div class="results-containerr">
-    <h3 class="results-title"><i class="fas fa-chart-bar"></i> Election Results</h3>
-    <?php if (mysqli_num_rows($resultPastElections) > 0): ?>
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Election Title</th>
-                        <th>End Date</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($pastElection = mysqli_fetch_assoc($resultPastElections)): ?>
-                        <tr>
-                            <td><?php echo $pastElection['title']; ?></td>
-                            <td><?php echo $pastElection['end_date']; ?></td>
-                            <td>
-                                <a href="results.php?election_id=<?php echo $pastElection['election_id']; ?>" 
-                                   class="btn btn-info btn-sm">
-                                    <i class="fas fa-eye"></i> View Results
-                                </a>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
+        <!-- Past Election Results -->
+        <div class="results-container">
+            <h3 class="results-title"><i class="fas fa-chart-bar"></i> Election Results</h3>
+
+            <?php if (mysqli_num_rows($resultPastElections) > 0): ?>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Election Title</th>
+                                <th>End Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($pastElection = mysqli_fetch_assoc($resultPastElections)): ?>
+                                <tr>
+                                    <td><?php echo $pastElection['title']; ?></td>
+                                    <td><?php echo $pastElection['end_date']; ?></td>
+                                    <td>
+                                        <a href="results.php?election_id=<?php echo $pastElection['election_id']; ?>" 
+                                           class="btn btn-info btn-sm">
+                                            <i class="fas fa-eye"></i> View Results
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php elseif (mysqli_num_rows($resultPendingResults) > 0): ?>
+                <div class="alert alert-warning" role="alert">
+                    <i class="fas fa-info-circle"></i> Results will be published soon for the following elections:
+                    <ul>
+                        <?php while ($pendingResult = mysqli_fetch_assoc($resultPendingResults)): ?>
+                            <li>
+                                <strong><?php echo $pendingResult['title']; ?></strong> 
+                                (Results will be published on: <?php echo $pendingResult['result_publish_time']; ?>)
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                </div>
+            <?php else: ?>
+                <div class="alert alert-warning" role="alert">
+                    <i class="fas fa-info-circle"></i> No past elections available for result viewing.
+                </div>
+            <?php endif; ?>
         </div>
-    <?php else: ?>
-        <div class="alert alert-warning" role="alert">
-            <i class="fas fa-info-circle"></i> No past elections available for result viewing.
-        </div>
-    <?php endif; ?>
-</div>
     </div>
-    <?php include 'footerall.php'; ?>
 </body>
 </html>

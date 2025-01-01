@@ -44,21 +44,21 @@ if ($candidate) {
     // Check if the election has ended
     $election_status = $conn->query("SELECT end_date FROM elections WHERE end_date <= '$current_date' LIMIT 1");
     ?>
-
+    
     <div class="container">
         <h1 class="text-center mb-4">Election Results for <?php echo htmlspecialchars($fullname); ?></h1>
-
+    
         <!-- Candidate's Details -->
         <div class="result-section">
             <p><strong>Your Position:</strong> <?php echo htmlspecialchars($position); ?></p>
             <p><strong>Your Votes:</strong> <?php echo $votes; ?> votes</p>
         </div>
-
+    
         <?php if ($election_status && $election_status->num_rows > 0): ?>
             <div class="result-section">
                 <?php
                 $is_winner = false;
-
+    
                 // Display batch winner
                 $batch_winners = $conn->query("SELECT fullname, votes FROM candidate WHERE batch = '$batch' AND position = '$position' ORDER BY votes DESC LIMIT 1");
                 if ($batch_winners->num_rows > 0) {
@@ -71,15 +71,22 @@ if ($candidate) {
                     }
                 }
                 ?>
-
+    
                 <?php if ($is_winner): ?>
                     <p class="alert alert-success">You have won the election for the position of <?php echo htmlspecialchars($position); ?> in your batch!</p>
                 <?php endif; ?>
-
+    
                 <!-- Department Results -->
-                <h3 class="result-title text-center mt-4">Results in Your Department for <?php echo htmlspecialchars($position); ?></h3>
+                <h3 class="result-title text-center mt-4">Results for <?php echo htmlspecialchars($position); ?></h3>
+    
                 <?php
-                $department_winners = $conn->query("SELECT fullname, votes FROM candidate WHERE department = '$department' AND position = '$position' ORDER BY votes DESC");
+                // Modify this query for "Class Representative" position to filter by batch
+                if ($position == 'Class Representative') {
+                    $department_winners = $conn->query("SELECT fullname, votes FROM candidate WHERE batch = '$batch' AND position = '$position' ORDER BY votes DESC");
+                } else {
+                    $department_winners = $conn->query("SELECT fullname, votes FROM candidate WHERE department = '$department' AND position = '$position' ORDER BY votes DESC");
+                }
+    
                 if ($department_winners->num_rows > 0): ?>
                     <table class="table table-bordered table-striped mt-3">
                         <thead class="table-dark">
@@ -100,7 +107,7 @@ if ($candidate) {
                 <?php else: ?>
                     <p class="alert alert-info text-center">No results available for your department yet.</p>
                 <?php endif; ?>
-
+    
                 <!-- Union Results -->
                 <?php if ($position == 'Union'): ?>
                     <h3 class="result-title text-center mt-4">Union Results</h3>
@@ -123,6 +130,7 @@ if ($candidate) {
             <p class="alert alert-warning text-center">Election results are not available yet. The election might still be ongoing.</p>
         <?php endif; ?>
     </div>
+    
 
     <?php
 } else {
@@ -144,7 +152,6 @@ if ($is_winner) {
     ';
 }
 ?>
-<?php include 'footerall.php'; ?>
 <!-- Include Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

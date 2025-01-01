@@ -105,8 +105,5 @@ $result = mysqli_query($conn, $query);
             <p>No messages found.</p>
         <?php } ?>
     </div>
-    <?php
-    include 'footerall.php';
-    ?>
 </body>
 </html>

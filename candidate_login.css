@@ -1,134 +1,108 @@
-/* General Reset */
+
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Layout */
+/* Body Styles with Background Image */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
+    background-image: url('uploads/58597077_9432523.svg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100vh; /* Full viewport height */
-    padding: 0;
-    margin: 0;
+    align-items: center; /* Centers content horizontally */
 }
 
-/* Header and Footer Styles */
-header, footer {
+/* Header Styles - Fixed at the top */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #003366;
-    color: #fff;
+    background-color: #004080;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000; /* Keeps the header on top */
     text-align: center;
-    padding: 15px 0;
+    font-size: 1.2rem;
 }
 
-
-/* Form Container */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Content Area to adjust for fixed header */
+.content {
+    margin-top: 80px; /* Adjust to avoid overlap with header */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 100vh;
     width: 100%;
-    max-width: 400px; /* Limit form width */
-    text-align: center;
-    margin-top: 30px;
 }
 
-/* Form Title */
+/* Login Form Container */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    width: 100%;
+    max-width: 400px; /* Controls the width */
+    text-align: center;
+}
+
+/* Heading Styles */
 h2 {
-    font-size: 22px;
-    color: #333;
     margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
 }
 
-/* Input and Label Styles */
+/* Label Styles */
 label {
     display: block;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+    font-weight: bold;
     text-align: left;
+    color: #555;
 }
 
+/* Input Styles */
 input[type="text"] {
     width: 100%;
-    padding: 12px 40px 12px 20px; /* Add padding for the icon */
-    margin-bottom: 16px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    color: #333;
-    outline: none;
-    transition: border-color 0.3s ease;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-/* Focus Effect for Input Fields */
-input[type="text"]:focus {
-    border-color: #4CAF50;
-}
-
-/* Icon Inside Input Fields */
-input[type="text"] {
-    position: relative;
-}
-
-input[type="text"]::before {
-    content: "\f007"; /* FontAwesome User Icon */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    font-size: 18px;
-}
-
-/* Submit Button Styling */
+/* Submit Button */
 input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
+    background-color: #007BFF; /* Primary blue color */
+    color: #fff;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 10px;
 }
 
-/* Submit Button Hover Effect */
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Error Message Styling */
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* Footer Styling */
-footer p {
-    font-size: 14px;
-    color: #fff;
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
     }
-    form {
-        width: 100%;
+
+    h2 {
+        font-size: 1.5rem;
     }
 }
