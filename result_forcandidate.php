@@ -26,7 +26,6 @@ if (!isset($_SESSION['candidate_id'])) {
 
 // Get logged-in candidate details
 $candidate_id = $_SESSION['candidate_id'];
-$current_date = date("Y-m-d");
 
 $candidate_query = $conn->query("SELECT fullname, position, department, batch FROM candidate WHERE candidate_id = '$candidate_id' LIMIT 1");
 $candidate = $candidate_query->fetch_assoc();
@@ -42,7 +41,7 @@ if ($candidate) {
     $votes = $votes_query->fetch_assoc()['votes'];
 
     // Check if the election has ended
-    $election_status = $conn->query("SELECT end_date FROM elections WHERE end_date <= '$current_date' LIMIT 1");
+    $election_status = $conn->query("SELECT end_date FROM elections WHERE end_date <= NOW() LIMIT 1");
     ?>
     
     <div class="container">
