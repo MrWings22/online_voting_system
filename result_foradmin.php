@@ -3,11 +3,8 @@ include 'db_connection.php';
 require_once 'header_back.php';
 renderHeader('admin.php');
 
-// Get the current date
-$current_date = date("Y-m-d");
-
 // Check if the election has ended
-$election_status = $conn->query("SELECT end_date FROM elections WHERE end_date <= '$current_date' LIMIT 1");
+$election_status = $conn->query("SELECT end_date FROM elections WHERE end_date <= NOW() LIMIT 1");
 
 // If the election has ended, fetch the winners
 if ($election_status && $election_status->num_rows > 0) {
